@@ -1,0 +1,12 @@
+.no-internet {
+    text-align: center;
+    padding: 20px;
+}
+
+.no-internet h1 {
+    color: red;
+}
+
+.no-internet p {
+    font-size: 18px;
+}

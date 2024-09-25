@@ -1,0 +1,66 @@
+.footer-section {
+    background-color: #212529;
+    color: #f8f9fa;
+}
+
+.footer-logo span {
+    color: #ffcc00;
+    /* Accent color */
+}
+
+.footer-logo-wrap .footer-logo {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #f8f9fa;
+}
+
+.custom-social a {
+    color: #f8f9fa;
+    transition: color 0.3s ease;
+}
+
+.custom-social a:hover {
+    color: #ffcc00;
+}
+
+.links-wrap ul li a {
+    color: #f8f9fa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.links-wrap ul li a:hover {
+    color: #ffcc00;
+}
+
+.copyright {
+    border-top: 1px solid #495057;
+    padding-top: 1rem;
+}
+
+@media (max-width: 767.98px) {
+    .custom-social {
+        justify-content: center;
+    }
+
+    .links-wrap {
+        text-align: center;
+    }
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffcc00 !important;
+
+}
+
+.navbar-brand:hover {
+    color: white !important;
+}

@@ -1,0 +1,58 @@
+.sidebar {
+    height: 100vh;
+    position: fixed;
+}
+
+.main {
+    margin-left: 250px;
+
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.nav-link:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+@media (max-width: 767.98px) {
+    .sidebar {
+        position: static;
+        height: auto;
+    }
+
+    .main {
+        margin-left: 0;
+    }
+
+    .navbarNav {
+        background-color: red;
+        display: flex !important;
+    }
+
+    .navbar-toggler:focus {
+        outline: 0;
+        box-shadow: none !important;
+    }
+}
+
+
+
+.navbar-toggler-icon {
+    color: #0056b3;
+
+}
+
+
+@media only screen and (max-width: 600px) {
+    .main-content {
+        padding-top: 20px;
+    }
+}

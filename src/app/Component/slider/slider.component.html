@@ -1,0 +1,33 @@
+<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <!-- Slide Items -->
+        <div *ngFor="let slide of slides; let i = index" class="carousel-item" [class.active]="i === 0">
+            <div class="container">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-lg-6"> <!-- Adjusted column width -->
+                        <div class="intro-excerpt">
+                            <h1>{{ slide.captionTitle }}</h1>
+                            <h1 class="mb-4">{{ slide.captionText }}</h1>
+                            <p>
+                                <a routerLink="/furniture" class="btn btn-secondary custom-btn">Shop Now</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6"> <!-- Adjusted column width -->
+                        <div class="hero-img-wrap text-lg-end">
+                            <!-- Added class `text-lg-end` for right alignment on lg screens -->
+                            <img [src]="slide.imageUrl" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>

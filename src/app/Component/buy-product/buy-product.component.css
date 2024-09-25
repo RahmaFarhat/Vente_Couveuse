@@ -1,0 +1,24 @@
+.container {
+    margin-top: 23px;
+    margin-bottom: 23px;
+    border: 2px solid darkblue;
+    padding: 40px;
+    border-radius: 5px;
+}
+
+select {
+    max-width: 70px;
+}
+
+table {
+    width: 100%;
+}
+
+.card {
+    font-size: 14px;
+}
+
+.table td,
+.table th {
+    padding: 0.5rem;
+}

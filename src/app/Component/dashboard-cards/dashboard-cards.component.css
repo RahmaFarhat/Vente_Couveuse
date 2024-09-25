@@ -1,0 +1,41 @@
+h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.row {
+    margin-top: 20px;
+
+}
+
+.card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(1px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.card-text {
+    color: #666;
+    font-size: 1em;
+}

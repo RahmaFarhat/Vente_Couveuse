@@ -1,0 +1,61 @@
+.navbar {
+    background-color: #3b5d50;
+    color: white;
+}
+
+.navbar-brand span {
+    color: #ffcc00;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+
+.nav-link:hover {
+    color: #ffcc00;
+
+
+}
+
+.custom-navbar-cta .nav-link i {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.custom-navbar-cta .nav-link:hover i {
+    filter: brightness(1.2);
+}
+
+
+.custom-navbar-cta {
+    display: flex;
+    gap: 15px;
+    margin-left: 0px;
+}
+
+.custom-navbar-cta .nav-link {
+    display: flex;
+    padding: 0;
+    color: #fff;
+}
+
+.custom-navbar-cta .nav-link i {
+    font-size: 1.5rem;
+    color: inherit;
+}
+
+.navbar-toggler {
+    border: none !important;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+
+a {
+    cursor: pointer;
+}

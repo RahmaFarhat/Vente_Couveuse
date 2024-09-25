@@ -1,0 +1,55 @@
+.user-table {
+    width: 100%;
+    margin: 20px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+tbody td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Style for the user table */
+.user-table {
+    margin-bottom: 20px;
+}
+
+.user-table h2 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Container for the chart with a reduced size */
+.chart-container {
+    width: 100%;
+    max-width: 600px;
+    /* Restricting the max width of the chart */
+    margin: 0 auto;
+    /* Centering the chart container */
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container h2 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+/* Reduce the size of the chart */
+canvas {
+    width: 100% !important;
+    height: 300px !important;
+    /* Adjust height as per your requirement */
+}

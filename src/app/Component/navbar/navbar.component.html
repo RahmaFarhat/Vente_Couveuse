@@ -1,0 +1,24 @@
+<nav class="custom-navbar navbar navbar-expand-md" aria-label="Furni navigation bar">
+    <div class="container">
+        <a class="navbar-brand text-light fs-2 fw-bold" routerLink="">COTCOT<span>.</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
+            aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsFurni">
+            <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+                <li class="nav-item active"><a class="nav-link" routerLink="/">Home</a></li>
+                <li><a class="nav-link" routerLink="/furniture">Couveuse</a></li>
+                <li><a class="nav-link" routerLink="/contact">Contact us</a></li>
+                <li><a class="nav-link" (click)="navigateToProfileOrLogin()"><i class="bi bi-person h5"></i></a></li>
+                <li><a class="nav-link" (click)="navigateToCartOrLogin()"><i class="bi bi-cart3 h5"></i></a></li>
+                <!-- <li *ngIf="loggedIn"><a class="nav-link" (click)="logOut()" routerLink="/"><i
+                            class="bi bi-box-arrow-right h5"></i></a>
+                </li> -->
+            </ul>
+        </div>
+
+    </div>
+
+</nav>

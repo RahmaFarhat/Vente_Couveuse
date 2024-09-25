@@ -1,0 +1,9 @@
+<!-- <div class="loading-overlay" *ngIf="isLoading">
+    <div class="spinner"></div>
+
+</div> -->
+
+<!-- loading.component.html -->
+<div *ngIf="isLoading | async" class="loading-overlay">
+    <div class="spinner"></div>
+</div>

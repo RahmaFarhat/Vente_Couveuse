@@ -1,0 +1,8 @@
+<div *ngIf="!isOnline">
+    <app-no-internet></app-no-internet>
+</div>
+<div *ngIf="isOnline">
+    <app-loading></app-loading>
+    <router-outlet></router-outlet>
+
+</div>

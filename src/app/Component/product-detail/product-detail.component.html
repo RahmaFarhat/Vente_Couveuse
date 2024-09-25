@@ -1,0 +1,60 @@
+<div class="container product-container mt-5" *ngIf="product">
+    <div class="row">
+        <div class="col-md-6 position-relative">
+            <div class="image-slider" *ngIf="product.productImages && product.productImages.length">
+                <div class="slide" *ngFor="let image of product.productImages; let i = index"
+                    [class.active]="i === currentSlide">
+                    <img [src]="'data:image/' + image.type + ';base64,' + image.picBytes" alt="{{ image.name }}">
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="btn btn-link" (click)="prevSlide()">
+                    <i class="bi bi-arrow-left-circle text-danger"></i>
+                </button>
+                <button class="btn btn-link" (click)="nextSlide()">
+                    <i class="bi bi-arrow-right-circle text-danger"></i>
+                </button>
+            </div>
+        </div>
+        <div class="col-md-6 product-details order-md-2">
+            <h1 class="product-title">{{ product.title }}</h1>
+            <p class="product-price">₹{{ product.price }}</p>
+            <p class="product-description">{{ product.description }}</p>
+            <p class="card-text text-warning">
+                {{ product.stockStatus}}
+            </p>
+            <button type="button" class="btn btn-warning mt-3" (click)="addToCart(productId)">Add to Cart</button>
+            <button type="button" class="btn btn-outline-warning mt-3 ms-3" (click)="buyNow(productId)">Buy
+                Now</button>
+            <div class="product-extra mt-3">
+                <div class="accordion">
+                    <input type="checkbox" id="product-details-toggle" class="toggle">
+                    <label for="product-details-toggle" class="accordion-label">Product Details</label>
+
+                    <div class="accordion-content">
+                        <p><strong>Category:</strong> {{ product.category }}</p>
+                        <p><strong>Color:</strong> {{ product.color }}</p>
+                        <p><strong>Material:</strong> {{ product.material }}</p>
+                        <p><strong>Seating Capacity:</strong> {{ product.seatingCapacity }}</p>
+                        <p><strong>Weight:</strong> {{ product.weight }} KG</p>
+                        <p><strong>Care and Maintenance:</strong><br> {{ product.careAndMaintenance }}</p>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <input type="checkbox" id="warranty-toggle" class="toggle">
+                    <label for="warranty-toggle" class="accordion-label">Warranty Details</label>
+
+                    <div class="accordion-content">
+                        <p>{{ product.warranty }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container d-flex justify-content-center align-items-center" *ngIf="productNotAvailable"
+    style="height: 50vh;">
+    <h1 class="text-muted">No Product related,Sorry!</h1>
+</div>
+<!-- <app-loading [isLoading]="isLoading"></app-loading> -->

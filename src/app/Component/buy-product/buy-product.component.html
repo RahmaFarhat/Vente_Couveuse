@@ -1,0 +1,98 @@
+<div class="container">
+    <h3>Place Order</h3>
+    <hr>
+    <div class="row">
+        <!-- Left-->
+        <div class="col-md-4">
+            <div *ngIf="user" class="user-info">
+                <!-- <form #orderForm="ngForm" (ngSubmit)="placeOrder(orderForm)"></form> -->
+                <form #orderForm="ngForm" (ngSubmit)="createTransactionAndPlaceOrder(orderForm)">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="text" id="email" name="email" class="form-control" [(ngModel)]="user.email"
+                            disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="userName" class="form-label">Name:</label>
+                        <input type="text" id="userName" name="fullName" class="form-control" [(ngModel)]="user.name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="userAddress" class="form-label">Address:</label>
+                        <input type="text" id="userAddress" name="address" class="form-control"
+                            [(ngModel)]="orderDetails.address.address">
+                    </div>
+                    <div class="mb-3">
+                        <label for="userPincode" class="form-label">Pincode:</label>
+                        <input type="text" id="userPincode" name="pincode" class="form-control mt-2"
+                            [(ngModel)]="orderDetails.address.pincode">
+                    </div>
+                    <div class="mb-3">
+                        <label for="userCity" class="form-label">City:</label>
+                        <input type="text" id="userCity" name="city" class="form-control mt-2"
+                            [(ngModel)]="orderDetails.address.city">
+                    </div>
+                    <div class="mb-3">
+                        <label for="userState" class="form-label">State:</label>
+                        <input type="text" id="userState" name="state" class="form-control mt-2"
+                            [(ngModel)]="orderDetails.address.state">
+                    </div>
+                    <div class="mb-3">
+                        <label for="userContact" class="form-label">Contact Number:</label>
+                        <input type="text" id="userContact" name="contactNumber" class="form-control"
+                            [(ngModel)]="orderDetails.contactNumber">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mb-3">Place Order</button>
+                </form>
+            </div>
+        </div>
+        <!-- Right -->
+        <div class="col-md-8">
+            <div class="card border-light mb-3" style="max-width: 100%;">
+                <div class="card-header">Order Summary</div>
+                <div class="card-body">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Amount</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let product of products">
+                                <td>{{product.title}}</td>
+                                <td>{{product.price}}₹</td>
+                                <td>
+                                    <select class="form-select form-select-sm"
+                                        [(ngModel)]="productQuantities[product.id]">
+                                        <option *ngFor="let q of [1,2,3,4,5]" [value]="q">{{q}}</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    {{getCalculateTotal(product.price,product.id)}}₹
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+
+                                </td>
+                                <td></td>
+                                <td class="grand-total" style="font-weight: bold;">
+                                    Grand Total:
+                                </td>
+                                <td class="grand-total" style="font-weight: bold;">
+                                    {{calculateGrandTotal()}}₹
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <app-loading [isLoading]="isLoading"></app-loading> -->

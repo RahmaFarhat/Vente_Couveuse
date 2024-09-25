@@ -1,0 +1,23 @@
+<div class="product-section py-5">
+    <div class="container">
+        <!-- Products Container -->
+        <div class="row" id="product-list">
+            <div *ngFor="let product of products" class="col-12 col-md-4 col-lg-3 mb-5">
+
+                <a class="product-item card h-100 d-flex flex-column align-items-center"
+                    [routerLink]="['/product', product.id]">
+                    <img [src]="'data:image/' + product.productImages[0].type + ';base64,' + product.productImages[0].picBytes"
+                        alt="{{ product.title}}">
+                    <h3 id="product-title" class="pt-3">{{ product.title }}</h3>
+                    <strong id="product-price">₹{{ product.price.toFixed(2) }}</strong>
+                    <p class="card-text text-warning">
+                        {{ product.stockStatus}}
+                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container d-flex justify-content-center align-items-center" *ngIf="isEmpty" style="height: 50vh;">
+    <h1 class="text-muted">No Products,Sorry!</h1>
+</div>

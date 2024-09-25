@@ -1,0 +1,65 @@
+<!-- Add this in your Angular component's HTML file -->
+<div class="container py-4">
+    <!-- Search Bar -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <form (submit)="onSearch($event)" class="d-flex">
+                <input type="text" class="form-control me-2" placeholder="Search products..." [(ngModel)]="searchKey"
+                    name="searchKey" (ngModelChange)="onSearchChange($event)" />
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Product Button -->
+    <button type="button" class="btn btn-primary mb-4" routerLink="/admin/addproduct">Add Product</button>
+
+
+    <div class="product-section py-5" *ngIf="!isNoProductAvailabel">
+        <div class="container">
+            <div class="row" id="product-list">
+                <div *ngFor="let product of products" class="col-12 col-md-4 col-lg-3 mb-5">
+                    <div class="product-card card h-100">
+                        <a class="product-item" [routerLink]="['/product', product.id]">
+                            <img [src]="'data:image/' + product.productImages[0].type + ';base64,' + product.productImages[0].picBytes"
+                                class="card-img-top" alt="{{ product.title }}">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title" id="product-title">{{ product.title }}</h5>
+                            <p class="card-text">
+                                <strong id="product-price">₹{{ product.price.toFixed(2) }}</strong>
+                            </p>
+                            <p class="card-text text-warning">
+                                {{ product.stockStatus}}
+                            </p>
+                            <div class="d-flex justify-content-around">
+                                <button class="btn btn-outline-primary"
+                                    [routerLink]="['/admin/product', product.id]">View</button>
+                                <button class="btn btn-outline-secondary"
+                                    [routerLink]="['/admin/editproduct', product.id]">Edit</button>
+                                <button class="btn btn-outline-danger"
+                                    (click)="deleteProduct(product.id)">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center" *ngIf="showLoadButton">
+            <button type="button" class="btn btn-outline-primary" (click)="loadMoreProducts()">Load more</button>
+        </div>
+    </div>
+</div>
+
+<div class="container text-center my-5" *ngIf="isNoProductAvailabel">
+    <div>
+        <img src="../../../assets/images/no_data.jpg" alt="No orders" class="img-fluid no-data">
+    </div>
+</div>
+
+<!-- Loading Indicator -->
+<div *ngIf="isLoading" class="text-center my-5">
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>

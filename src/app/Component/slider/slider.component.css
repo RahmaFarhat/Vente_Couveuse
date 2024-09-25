@@ -1,0 +1,118 @@
+#heroCarousel {
+    background-color: #3b5d50;
+    color: white;
+    width: 100%;
+    height: auto;
+    /* Make the height dynamic */
+    display: flex;
+    align-items: center;
+}
+
+.carousel-inner {
+    height: auto;
+}
+
+.carousel-item {
+    height: auto;
+}
+
+img {
+    max-height: 400px;
+    /* Max height to ensure it doesn't exceed a specific size */
+    width: auto;
+    /* Maintain aspect ratio */
+}
+
+.custom-btn {
+    background-color: #ffcc00;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 30px !important;
+    transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+    background-color: #e6b800;
+    color: #ffffff;
+    box-shadow: 0 4px 8px #3b5d50;
+    /* transform: translateY(-2px); */
+}
+
+.custom-btn:active {
+    background-color: #cc9900;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    width: 10% !important;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    img {
+        max-height: 300px;
+        /* Adjust max height for smaller screens */
+    }
+
+    .custom-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 992px) {
+    img {
+        max-height: 250px;
+        /* Adjust max height for smaller screens */
+    }
+
+    .custom-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+        width: 15% !important;
+    }
+}
+
+@media (max-width: 768px) {
+    img {
+        max-height: 200px;
+        /* Adjust max height for smaller screens */
+    }
+
+    .custom-btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.75rem;
+    }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+        width: 20% !important;
+    }
+
+    .intro-excerpt {
+        text-align: center;
+    }
+
+    .hero-img-wrap {
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    img {
+        max-height: 150px;
+        /* Adjust max height for smaller screens */
+    }
+
+    .custom-btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.7rem;
+    }
+}

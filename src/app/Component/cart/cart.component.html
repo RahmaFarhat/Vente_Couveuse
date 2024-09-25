@@ -1,0 +1,49 @@
+<div class="text-center mt-3 empty mb-3" *ngIf="isNoProducts">
+    <div class="empty-cart-container">
+        <h3>Your cart is empty.</h3>
+        <p class="empty-cart-message">It looks like you haven't added any items to your cart yet. Start shopping and add
+            items to your cart to see them here.</p>
+        <a class="btn btn-primary mt-3" routerLink="/furniture">Go to Shop</a>
+    </div>
+</div>
+
+<div class="container mt-4" *ngIf="!isNoProducts">
+    <div class="mb-3" align="right">
+        <button type="button" class="btn" style="background-color: #3b5d50; color: white;"
+            (click)="checkOut()">Checkout</button>
+
+    </div>
+    <div class="table-responsive"> <!-- Responsive table wrapper -->
+        <table class="table table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th class="text-center">Image</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th class="text-center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of products">
+                    <td class="text-center"> <!-- Center image -->
+                        <img [src]="'data:image/' + item.product.productImages[0].type + ';base64,' + item.product.productImages[0].picBytes"
+                            alt="{{ item.product.title }}">
+                    </td>
+                    <td>{{ item.product.title }}</td>
+                    <td>{{ item.product.description }}</td>
+                    <td>₹{{ item.product.price }}</td>
+                    <td class="text-center">
+                        <button class=" btn btn-outline-danger btn-sm" (click)="removeProduct(item.cartId)"
+                            aria-label="Remove item" title="Remove item">
+                            <i class="bi bi-x-circle-fill"></i>
+                        </button>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- <app-loading [isLoading]="isLoading"></app-loading> -->

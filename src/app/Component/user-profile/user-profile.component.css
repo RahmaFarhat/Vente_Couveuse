@@ -1,0 +1,31 @@
+.card {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.card-title {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.card-text {
+    color: #666;
+    font-size: 1em;
+}
+
+img.rounded-circle {
+    border: 2px solid #ddd;
+    padding: 5px;
+}
+
+img {
+    border-radius: 50%;
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}

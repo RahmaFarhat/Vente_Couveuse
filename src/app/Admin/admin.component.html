@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <div class="row">
+        <nav class="navbar navbar-dark bg-dark col-12 d-md-none ps-3">
+            <div class="d-flex justify-content-between w-100">
+                <!-- Brand logo aligned left for small screens -->
+                <a class="navbar-brand text-light fs-3 fw-bold" routerLink="/admin">
+                    COTCOT<span class=" text-warning">.</span>
+                </a>
+                <!-- Toggler button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"
+                    aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse ps-3">
+            <div class="position-sticky pt-3">
+                <ul class="nav flex-column">
+
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" [routerLink]="['/admin/dashboard']" hidden>
+                            <i class="bi bi-speedometer2"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" [routerLink]="['/admin/product']">
+                            <i class="bi bi-box-seam"></i> Products
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" [routerLink]="['/admin/orders']">
+                            <i class="bi bi-bag-check"></i> Orders
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" [routerLink]="['/admin/users']">
+                            <i class="bi bi-people"></i> Users
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" (click)="logOut()" routerLink="/">
+                            <i class="bi bi-box-arrow-right"></i> Logout
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
+            <nav class="navbar navbar-light d-flex justify-content-end d-none d-md-flex">
+                <a class="navbar-brand text-dark fs-3 fw-bold" routerLink="/admin">
+                    COTCOT<span class=" text-warning">.</span>
+                </a>
+            </nav>
+            <router-outlet></router-outlet>
+        </main>
+    </div>
+</div>

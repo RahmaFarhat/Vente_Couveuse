@@ -1,0 +1,47 @@
+<div class="container mb-3">
+    <div class="row justify-content-center mt-5">
+        <div class="col-lg-4">
+            <h2 class="text-center mb-3" routerLink="/" style="cursor: pointer;">BuyFurn<span>.</span></h2>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center mb-4">Login</h5>
+                    <form (ngSubmit)="login()" #loginForm="ngForm">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="text" id="email" name="email" class="form-control" required
+                                [(ngModel)]="username" #email="ngModel">
+                            <div *ngIf="email.invalid && email.touched" class="text-danger">Please enter your email
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" id="password" name="password" class="form-control" required
+                                [(ngModel)]="password" #pass="ngModel">
+                            <div *ngIf="pass.invalid && pass.touched" class="text-danger">Please enter your password
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn w-100 mt-3" [disabled]="loginForm.invalid">
+                            <span *ngIf="loding" class="spinner-border spinner-border-sm custom-spinner" role="status"
+                                aria-hidden="true"></span>
+                            <span class="text-dark" *ngIf="!loding">Login</span>
+                        </button>
+                    </form>
+                    <p *ngIf="loginError" class="text-danger text-center mt-3">{{loginMsg}}</p>
+                    <div class="d-flex justify-content-between mt-3">
+                        <a class="link-primary forgotpassword" (click)="forgotPassword()">Forgot password?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mb-3">
+    <div class="row justify-content-center mt-5">
+        <div class="col-lg-4">
+            <div class="card register">
+                <a routerLink="/register" class="btn">Create your accout</a>
+            </div>
+        </div>
+    </div>
+</div>

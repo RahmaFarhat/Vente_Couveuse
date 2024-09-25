@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-lg-5">
+            <h3 class="text-center mb-3">OTP sent your email</h3>
+
+            <div class="card">
+                <div class="card-body">
+                    <form (ngSubmit)="verifyOtp()" #otpForm="ngForm">
+                        <div class="mb-3">
+                            <label for="otp" class="form-label"></label>
+                            <input type="text" id="otp" name="otp" class="form-control" required [(ngModel)]="otp"
+                                placeholder="Enter 6-Digit OTP">
+                        </div>
+                        <button type="submit" class="btn w-100"> <span *ngIf="loading"
+                                class="spinner-border spinner-border-sm custom-spinner" role="status"
+                                aria-hidden="true"></span>
+                            <span class="text-dark" *ngIf="!loading">Verify otp</span></button>
+                    </form>
+                    <p *ngIf="verificationError" class="text-danger text-center mt-3">Invalid otp!. Please
+                        try
+                        again.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
